@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'ru-RU' }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% seo %}
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <meta name="theme-color" content="#6B2737">
+  </head>
+
+  <body>
+    <a id="skip-to-content" href="#content">Перейти к содержимому</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">{{ page.title | default: site.title }}</h1>
+      <h2 class="project-tagline">
+        {{ page.description | default: site.description }}
+      </h2>
+    </header>
+
+    <nav class="site-nav">
+      <div class="site-nav-inner">
+        <a href="{{ '/' | relative_url }}" class="home-link">🍷 Главная</a>
+        <a href="{{ '/categories.html' | relative_url }}">Категории</a>
+        <a href="{{ '/shops.html' | relative_url }}">Магазины СПб</a>
+        <a href="{{ '/glossary.html' | relative_url }}">Глоссарий</a>
+        <a href="{{ '/sources.html' | relative_url }}">Источники</a>
+      </div>
+    </nav>
+
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+
+      <footer class="site-footer">
+        <p>
+          Составлено как сводный гид по игристым винам классического метода.
+          Цены и наличие актуальны на май 2026 г. — уточняйте перед покупкой.
+        </p>
+        <p>
+          Хостинг: <a href="https://pages.github.com">GitHub Pages</a> ·
+          Тема: <a href="https://github.com/pages-themes/cayman">Cayman</a>
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

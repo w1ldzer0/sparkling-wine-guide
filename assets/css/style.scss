@@ -1,0 +1,357 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* ============================================
+   Винная палитра
+   ============================================ */
+:root {
+  --wine-deep:    #6B2737;
+  --wine-mid:     #8B3A4A;
+  --wine-light:   #C9A0A8;
+  --wine-cream:   #FBF5F2;
+  --wine-warm:    #F2E4DC;
+  --gold:         #B8860B;
+  --text-dark:    #2C1810;
+  --text-muted:   #6B5B53;
+}
+
+/* ============================================
+   Hero / Page header — переопределяем cayman
+   ============================================ */
+.page-header {
+  background-color: var(--wine-deep);
+  background-image: linear-gradient(120deg, var(--wine-deep) 0%, var(--wine-mid) 50%, #4A1A26 100%);
+  padding: 4rem 6rem;
+}
+
+.page-header::before {
+  content: "🍾";
+  display: block;
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+}
+
+.project-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.project-tagline {
+  opacity: 0.92;
+  font-style: italic;
+}
+
+/* ============================================
+   Навигация
+   ============================================ */
+.site-nav {
+  background: var(--wine-warm);
+  border-bottom: 2px solid var(--wine-deep);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-nav-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: center;
+}
+
+.site-nav a {
+  color: var(--wine-deep);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover {
+  background: var(--wine-deep);
+  color: white;
+}
+
+.site-nav .home-link {
+  font-weight: 700;
+  margin-right: auto;
+}
+
+/* ============================================
+   Body / контент
+   ============================================ */
+body {
+  background: var(--wine-cream);
+  color: var(--text-dark);
+}
+
+.main-content {
+  max-width: 70rem;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+  color: var(--wine-deep);
+  font-family: Georgia, serif;
+}
+
+.main-content h2 {
+  border-bottom: 2px solid var(--wine-light);
+  padding-bottom: 0.4rem;
+  margin-top: 2.5rem;
+}
+
+.main-content h3 {
+  margin-top: 2rem;
+}
+
+.main-content a {
+  color: var(--wine-mid);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.main-content a:hover {
+  color: var(--wine-deep);
+  background: var(--wine-warm);
+}
+
+/* ============================================
+   Таблицы — критично, потому что данных много
+   ============================================ */
+.main-content table {
+  display: block;
+  overflow-x: auto;
+  white-space: normal;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  background: white;
+  box-shadow: 0 2px 8px rgba(107, 39, 55, 0.08);
+  border-radius: 6px;
+  font-size: 0.92rem;
+}
+
+.main-content table th {
+  background: var(--wine-deep);
+  color: white;
+  font-weight: 600;
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border: none;
+  position: sticky;
+  top: 0;
+}
+
+.main-content table td {
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--wine-warm);
+  vertical-align: top;
+  background: white;
+}
+
+.main-content table tr:nth-child(even) td {
+  background: var(--wine-cream);
+}
+
+.main-content table tr:hover td {
+  background: var(--wine-warm);
+}
+
+.main-content table strong {
+  color: var(--wine-deep);
+}
+
+/* Узкая таблица сравнения - другой стиль */
+.compact-table table {
+  font-size: 0.88rem;
+}
+
+/* ============================================
+   Карточки категорий
+   ============================================ */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.category-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 4px solid var(--wine-deep);
+  box-shadow: 0 2px 8px rgba(107, 39, 55, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(107, 39, 55, 0.15);
+}
+
+.category-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+  color: var(--wine-deep);
+}
+
+.category-card .region {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 0.6rem;
+}
+
+.category-card .desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* ============================================
+   Карточки магазинов
+   ============================================ */
+.shop-card {
+  background: white;
+  border-radius: 6px;
+  padding: 1rem 1.4rem;
+  margin: 0.7rem 0;
+  border-left: 3px solid var(--gold);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.shop-card h4 {
+  margin: 0 0 0.3rem 0;
+  color: var(--wine-deep);
+}
+
+.shop-card .website {
+  font-size: 0.9rem;
+  font-family: monospace;
+}
+
+/* ============================================
+   Бейджи / тэги
+   ============================================ */
+.badge {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border-radius: 4px;
+  margin: 0 0.2em;
+  vertical-align: middle;
+}
+
+.badge-france  { background: #E8D5DC; color: #6B2737; }
+.badge-italy   { background: #DCE8D5; color: #2D5A2A; }
+.badge-spain   { background: #F2E4C9; color: #8B5A1F; }
+.badge-other   { background: #D5DCE8; color: #2A4A6B; }
+
+/* ============================================
+   Callouts
+   ============================================ */
+.callout {
+  background: var(--wine-warm);
+  border-left: 4px solid var(--wine-deep);
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.callout-warn {
+  background: #FFF3CD;
+  border-left-color: var(--gold);
+}
+
+.callout strong {
+  color: var(--wine-deep);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.site-footer {
+  border-top: 1px solid var(--wine-light);
+  padding-top: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: var(--wine-mid);
+}
+
+/* ============================================
+   Адаптивность
+   ============================================ */
+@media (max-width: 720px) {
+  .page-header {
+    padding: 2rem 1.5rem;
+  }
+
+  .page-header::before {
+    font-size: 2.5rem;
+  }
+
+  .main-content {
+    padding: 1rem 1.2rem !important;
+  }
+
+  .main-content table {
+    font-size: 0.82rem;
+  }
+
+  .main-content table th,
+  .main-content table td {
+    padding: 0.55rem 0.6rem;
+  }
+
+  .site-nav-inner {
+    padding: 0 1rem;
+    gap: 0.3rem 0.6rem;
+  }
+
+  .site-nav a {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+/* Печать */
+@media print {
+  .page-header,
+  .site-nav,
+  .site-footer {
+    display: none;
+  }
+
+  .main-content {
+    max-width: 100%;
+  }
+
+  .main-content table {
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+}
